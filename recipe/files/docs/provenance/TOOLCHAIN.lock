@@ -1,0 +1,169 @@
+{
+  "apt_refresh": [],
+  "binaries_from_component_images": [],
+  "binaries_from_source": [
+    {
+      "build_flags": [
+        "-trimpath"
+      ],
+      "build_tags": [],
+      "cgo_enabled": 0,
+      "ldflags": "-X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.version=@VERSION@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.commit=@COMMIT@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.gitTreeState=dirty -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.releaseStatus=,released -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.date=2026-10-21T07:01:58+00:00",
+      "main_pkg": "./cmd/multus",
+      "name": "multus",
+      "out_path": "/usr/src/multus-cni/bin/multus",
+      "verify_contains": "version:@VERSION@(dirty,released), commit:@COMMIT@",
+      "verify_subcmd": "-version"
+    },
+    {
+      "build_flags": [
+        "-trimpath"
+      ],
+      "build_tags": [],
+      "cgo_enabled": 0,
+      "ldflags": "-X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.version=@VERSION@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.commit=@COMMIT@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.gitTreeState=dirty -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.releaseStatus=,released -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.date=2026-10-21T07:01:58+00:00",
+      "main_pkg": "./cmd/multus-daemon",
+      "name": "multus-daemon",
+      "out_path": "/usr/src/multus-cni/bin/multus-daemon",
+      "verify_contains": "version:@VERSION@(dirty,released)",
+      "verify_subcmd": "-version"
+    },
+    {
+      "build_flags": [
+        "-trimpath"
+      ],
+      "build_tags": [],
+      "cgo_enabled": 0,
+      "ldflags": "-X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.version=@VERSION@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.commit=@COMMIT@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.gitTreeState=dirty -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.releaseStatus=,released -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.date=2026-10-21T07:01:58+00:00",
+      "main_pkg": "./cmd/multus-shim",
+      "name": "multus-shim",
+      "out_path": "/usr/src/multus-cni/bin/multus-shim",
+      "verify_contains": "version:@VERSION@(dirty,released)",
+      "verify_subcmd": "-version"
+    },
+    {
+      "build_flags": [
+        "-trimpath"
+      ],
+      "build_tags": [],
+      "cgo_enabled": 0,
+      "ldflags": "-X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.version=@VERSION@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.commit=@COMMIT@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.gitTreeState=dirty -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.releaseStatus=,released -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.date=2026-10-21T07:01:58+00:00",
+      "main_pkg": "./cmd/install_multus",
+      "name": "install_multus",
+      "out_path": "/usr/src/multus-cni/bin/install_multus",
+      "verify_subcmd": "--help 2>&1 | grep -q -- --dest-dir"
+    },
+    {
+      "build_flags": [
+        "-trimpath"
+      ],
+      "build_tags": [],
+      "cgo_enabled": 0,
+      "ldflags": "-X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.version=@VERSION@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.commit=@COMMIT@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.gitTreeState=dirty -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.releaseStatus=,released -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.date=2026-10-21T07:01:58+00:00",
+      "main_pkg": "./cmd/thin_entrypoint",
+      "name": "thin_entrypoint",
+      "out_path": "/usr/src/multus-cni/bin/thin_entrypoint",
+      "verify_subcmd": "--help 2>&1 | grep -q -- --multus-conf-file"
+    },
+    {
+      "build_flags": [
+        "-trimpath"
+      ],
+      "build_tags": [],
+      "cgo_enabled": 0,
+      "ldflags": "-X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.version=@VERSION@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.commit=@COMMIT@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.gitTreeState=dirty -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.releaseStatus=,released -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.date=2026-10-21T07:01:58+00:00",
+      "main_pkg": "./cmd/kubeconfig_generator",
+      "name": "kubeconfig_generator",
+      "out_path": "/usr/src/multus-cni/bin/kubeconfig_generator",
+      "verify_subcmd": "--help 2>&1 | grep -q -- --bootstrap-config"
+    },
+    {
+      "build_flags": [
+        "-trimpath"
+      ],
+      "build_tags": [],
+      "cgo_enabled": 0,
+      "ldflags": "-X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.version=@VERSION@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.commit=@COMMIT@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.gitTreeState=dirty -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.releaseStatus=,released -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.date=2026-10-21T07:01:58+00:00",
+      "main_pkg": "./cmd/cert-approver",
+      "name": "cert-approver",
+      "out_path": "/usr/src/multus-cni/bin/cert-approver",
+      "verify_subcmd": "2>&1 | grep -q 'starting cert-approver'"
+    },
+    {
+      "build_flags": [
+        "-trimpath"
+      ],
+      "build_tags": [],
+      "cgo_enabled": 0,
+      "ldflags": "-X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.version=@VERSION@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.commit=@COMMIT@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.gitTreeState=dirty -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.releaseStatus=,released -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.date=2026-10-21T07:01:58+00:00",
+      "main_pkg": "./cmd/passthru-cni",
+      "name": "passthru",
+      "out_path": "/usr/src/multus-cni/bin/passthru",
+      "verify_subcmd": "2>&1 | grep -q 'Passthrough CNI Plugin'"
+    }
+  ],
+  "build_method": "source-rebuild-go",
+  "chain_id": 1168,
+  "dep_bumps": [
+    {
+      "module": "golang.org/x/net",
+      "to": "v0.62.0",
+      "why": "CVE-2026-78661 / GO-2026-6860 (HIGH, published 2026-10-27): golang.org/x/net below 0.62.0 is in the vulnerable range; fixed in 0.62.0 (its go.mod needs go 1.26.0 and moves x/crypto to 0.58.0, x/sys 0.49.0, x/term 0.47.0, x/text 0.43.0). v4.3.1's go.mod requires 0.55.0; with this floor's previous value v0.60.0 (CVE-2026-78663 critical and five highs, fleet floor, 2026-10-28), ReadyStack's daily scan of the live release v4.3.1-CE-ubuntu24.04-r1 (2026-11-06, scripts/scan-inventory.py: syft 1.54.1 + grype 0.120.1) found 0.60.0 in multus, multus-daemon, multus-shim, kubeconfig_generator and cert-approver."
+    },
+    {
+      "module": "golang.org/x/text",
+      "to": "v0.41.0",
+      "why": "CVE-2026-56852 (fixed 0.39.0), CVE-2026-56851 (fixed 0.41.0), high: Scout on the first build found x/text 0.37.0; fleet floor v0.41.0"
+    },
+    {
+      "module": "google.golang.org/grpc",
+      "to": "v1.83.2",
+      "why": "CVE-2026-84445 (fixed 1.82.2), CVE-2026-84304 (fixed 1.83.1), high: Scout on the first build found grpc 1.82.1; fleet floor v1.83.2"
+    }
+  ],
+  "expected_residuals": [],
+  "images": [
+    {
+      "digest": "sha256:dc40a13b61304647ed7e5d581d246b86413dfc29d63c6d018310feb93cd98fc0",
+      "ref": "golang:1.26.11-bookworm",
+      "role": "builder"
+    },
+    {
+      "digest": "sha256:dc40a13b61304647ed7e5d581d246b86413dfc29d63c6d018310feb93cd98fc0",
+      "ref": "golang:1.26.11-bookworm",
+      "role": "offline_builder"
+    },
+    {
+      "digest": "sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289",
+      "ref": "ubuntu:24.04",
+      "role": "base"
+    }
+  ],
+  "mod_replaces": [],
+  "runtime_base": {
+    "kind": "chisel",
+    "shell": true
+  },
+  "schema": "kitforge.toolchain_lock.v1",
+  "slug": "multuscni",
+  "source": {
+    "build_env": {
+      "CGO_ENABLED": "0",
+      "GOARCH": "amd64",
+      "GOFLAGS": "-buildvcs=false",
+      "GOOS": "linux",
+      "GOTOOLCHAIN": "local"
+    },
+    "builder_image": "golang:1.26.11-bookworm",
+    "commit": "1d81062afcb32eb7290fa28bcbc482c3d0c5cae9",
+    "commit_epoch": 1792566118,
+    "go_module_root": "gopkg.in/k8snetworkplumbingwg/multus-cni.v4",
+    "go_version_required": "1.26.0",
+    "ref": "v4.3.2",
+    "repo": "https://github.com/k8snetworkplumbingwg/multus-cni",
+    "source_date_epoch": 1795161129,
+    "source_date_epoch_basis": "release-cut",
+    "source_date_epoch_provenance": "the time release v4.3.2-CE-ubuntu24.04-r3 was cut (2026-11-20T07:52:09Z), by scripts/retarget.py --rev-bump: ReadyStack dates an image by when its release was packaged (owner 2026-11-10), recorded here once and used by every rebuild of the release; it builds upstream commit 1d81062afcb3, dated 2026-10-21T07:01:58Z (source.commit_epoch)."
+  },
+  "version": "v4.3.2"
+}

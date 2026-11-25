@@ -1,0 +1,11 @@
+image_manifest_digest=sha256:c756394f10bf375ad51f83eda98d3f6a88b5cafebd5c81eaff86fa2d44cb746e
+config_digest=sha256:1242505ac92bb9c2283a00105f51038badbed71f92185ea4b088a742a21412de
+tag=readystack/multuscni:v4.3.2-CE-ubuntu24.04-r3
+probe_port=80
+probe_path=/
+probe_timeout=180
+probe_exec=/usr/src/multus-cni/bin/multus -version
+verify_boot=oneshot
+verify_oneshot_arg=--cni-conf-dir=/tmp
+verify_oneshot_arg=--cni-bin-dir=/tmp
+verify_oneshot_expect=serviceaccount/ca.crt not found

@@ -1,0 +1,9 @@
+{
+  "schema": "kitforge.source_tree_hash.v1",
+  "slug": "multuscni",
+  "repo": "https://github.com/k8snetworkplumbingwg/multus-cni",
+  "ref": "v4.3.2",
+  "commit": "1d81062afcb32eb7290fa28bcbc482c3d0c5cae9",
+  "tree_listing_sha256": "e0f3ab4e4ec869c7bcc00c31d2acf5a075aee8ef7e25ee5783bc99b188105722",
+  "file_count": 159
+}

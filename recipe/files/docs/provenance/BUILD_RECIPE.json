@@ -1,0 +1,148 @@
+{
+  "schema": "kitforge.build_recipe.v1",
+  "slug": "multuscni",
+  "image": "readystack/multuscni:v4.3.2-CE-ubuntu24.04-r3",
+  "build_method": "source-rebuild-go",
+  "source": {
+    "repo": "https://github.com/k8snetworkplumbingwg/multus-cni",
+    "ref": "v4.3.2",
+    "commit": "1d81062afcb32eb7290fa28bcbc482c3d0c5cae9",
+    "builder_image": "golang:1.26.11-bookworm",
+    "go_module_root": "gopkg.in/k8snetworkplumbingwg/multus-cni.v4",
+    "go_version_required": "1.26.0",
+    "source_date_epoch": 1795161129,
+    "source_date_epoch_provenance": "the time release v4.3.2-CE-ubuntu24.04-r3 was cut (2026-11-20T07:52:09Z), by scripts/retarget.py --rev-bump: ReadyStack dates an image by when its release was packaged (owner 2026-11-10), recorded here once and used by every rebuild of the release; it builds upstream commit 1d81062afcb3, dated 2026-10-21T07:01:58Z (source.commit_epoch).",
+    "build_env": {
+      "CGO_ENABLED": "0",
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "GOTOOLCHAIN": "local",
+      "GOFLAGS": "-buildvcs=false"
+    },
+    "_ldflags_note": "hack/build-go.sh stamps pkg/multus.version (the exact tag), commit (git rev-parse HEAD), gitTreeState (`git status --porcelain --untracked-files=no`: clean or dirty), releaseStatus (\",released\" when building a tag) and date (`date -u -d @SOURCE_DATE_EPOCH --iso-8601=seconds`). gitTreeState is dirty because the vendor stage raises go.mod requirements (dep_bumps), which is what upstream's script reports for that tree; the binaries print version:<tag>(dirty,released). The date is source.source_date_epoch rendered as the script renders it; a retarget must move it with the epoch. No -s -w: upstream does not strip.",
+    "source_date_epoch_basis": "release-cut",
+    "commit_epoch": 1792566118
+  },
+  "binaries_from_source": [
+    {
+      "name": "multus",
+      "main_pkg": "./cmd/multus",
+      "cgo_enabled": 0,
+      "build_tags": [],
+      "build_flags": [
+        "-trimpath"
+      ],
+      "ldflags": "-X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.version=@VERSION@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.commit=@COMMIT@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.gitTreeState=dirty -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.releaseStatus=,released -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.date=2026-10-21T07:01:58+00:00",
+      "out_path": "/usr/src/multus-cni/bin/multus",
+      "verify_subcmd": "-version",
+      "verify_contains": "version:@VERSION@(dirty,released), commit:@COMMIT@"
+    },
+    {
+      "name": "multus-daemon",
+      "main_pkg": "./cmd/multus-daemon",
+      "cgo_enabled": 0,
+      "build_tags": [],
+      "build_flags": [
+        "-trimpath"
+      ],
+      "ldflags": "-X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.version=@VERSION@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.commit=@COMMIT@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.gitTreeState=dirty -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.releaseStatus=,released -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.date=2026-10-21T07:01:58+00:00",
+      "out_path": "/usr/src/multus-cni/bin/multus-daemon",
+      "verify_subcmd": "-version",
+      "verify_contains": "version:@VERSION@(dirty,released)"
+    },
+    {
+      "name": "multus-shim",
+      "main_pkg": "./cmd/multus-shim",
+      "cgo_enabled": 0,
+      "build_tags": [],
+      "build_flags": [
+        "-trimpath"
+      ],
+      "ldflags": "-X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.version=@VERSION@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.commit=@COMMIT@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.gitTreeState=dirty -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.releaseStatus=,released -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.date=2026-10-21T07:01:58+00:00",
+      "out_path": "/usr/src/multus-cni/bin/multus-shim",
+      "verify_subcmd": "-version",
+      "verify_contains": "version:@VERSION@(dirty,released)"
+    },
+    {
+      "name": "install_multus",
+      "main_pkg": "./cmd/install_multus",
+      "cgo_enabled": 0,
+      "build_tags": [],
+      "build_flags": [
+        "-trimpath"
+      ],
+      "ldflags": "-X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.version=@VERSION@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.commit=@COMMIT@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.gitTreeState=dirty -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.releaseStatus=,released -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.date=2026-10-21T07:01:58+00:00",
+      "out_path": "/usr/src/multus-cni/bin/install_multus",
+      "verify_subcmd": "--help 2>&1 | grep -q -- --dest-dir",
+      "_note": "No version flag; --help prints the flags (and exits 1), so the verify checks the binary runs and knows its own --dest-dir."
+    },
+    {
+      "name": "thin_entrypoint",
+      "main_pkg": "./cmd/thin_entrypoint",
+      "cgo_enabled": 0,
+      "build_tags": [],
+      "build_flags": [
+        "-trimpath"
+      ],
+      "ldflags": "-X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.version=@VERSION@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.commit=@COMMIT@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.gitTreeState=dirty -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.releaseStatus=,released -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.date=2026-10-21T07:01:58+00:00",
+      "out_path": "/usr/src/multus-cni/bin/thin_entrypoint",
+      "verify_subcmd": "--help 2>&1 | grep -q -- --multus-conf-file",
+      "_note": "No version flag; --help prints the flags and exits 1."
+    },
+    {
+      "name": "kubeconfig_generator",
+      "main_pkg": "./cmd/kubeconfig_generator",
+      "cgo_enabled": 0,
+      "build_tags": [],
+      "build_flags": [
+        "-trimpath"
+      ],
+      "ldflags": "-X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.version=@VERSION@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.commit=@COMMIT@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.gitTreeState=dirty -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.releaseStatus=,released -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.date=2026-10-21T07:01:58+00:00",
+      "out_path": "/usr/src/multus-cni/bin/kubeconfig_generator",
+      "verify_subcmd": "--help 2>&1 | grep -q -- --bootstrap-config",
+      "_note": "No version flag; --help prints the flags and exits 1."
+    },
+    {
+      "name": "cert-approver",
+      "main_pkg": "./cmd/cert-approver",
+      "cgo_enabled": 0,
+      "build_tags": [],
+      "build_flags": [
+        "-trimpath"
+      ],
+      "ldflags": "-X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.version=@VERSION@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.commit=@COMMIT@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.gitTreeState=dirty -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.releaseStatus=,released -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.date=2026-10-21T07:01:58+00:00",
+      "out_path": "/usr/src/multus-cni/bin/cert-approver",
+      "verify_subcmd": "2>&1 | grep -q 'starting cert-approver'",
+      "_note": "No flags at all: it logs `starting cert-approver` and, outside a cluster, exits at once on rest.InClusterConfig's error. The verify checks it ran that far."
+    },
+    {
+      "name": "passthru",
+      "main_pkg": "./cmd/passthru-cni",
+      "cgo_enabled": 0,
+      "build_tags": [],
+      "build_flags": [
+        "-trimpath"
+      ],
+      "ldflags": "-X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.version=@VERSION@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.commit=@COMMIT@ -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.gitTreeState=dirty -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.releaseStatus=,released -X gopkg.in/k8snetworkplumbingwg/multus-cni.v4/pkg/multus.date=2026-10-21T07:01:58+00:00",
+      "out_path": "/usr/src/multus-cni/bin/passthru",
+      "verify_subcmd": "2>&1 | grep -q 'Passthrough CNI Plugin'",
+      "_note": "A CNI plugin: without CNI_COMMAND it prints its about line and the CNI versions it supports, and exits 0."
+    }
+  ],
+  "runtime_packages": [
+    "base-files",
+    "base-passwd",
+    "ca-certificates",
+    "coreutils",
+    "dash",
+    "libc6",
+    "libssl3t64",
+    "openssl",
+    "tzdata"
+  ],
+  "runtime_base": {
+    "kind": "chisel",
+    "shell": true,
+    "packages": "vendored/chisel/packages.tsv"
+  }
+}

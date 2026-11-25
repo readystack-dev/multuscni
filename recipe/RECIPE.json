@@ -1,0 +1,288 @@
+{
+ "schema": "readystack.recipe.v1",
+ "slug": "multuscni",
+ "tag": "v4.3.2-CE-ubuntu24.04-r3",
+ "tarball": "ReadyStack-multuscni-v4.3.2-CE-ubuntu24.04-r3.tar.gz",
+ "tarball_sha256": "74a12157d43c1b402709c0089010bcedae8e43995d97117d3c127fda23aeeb2c",
+ "kit_root": "v4.3.2-CE-ubuntu24.04-r3",
+ "generated_at": "2026-11-20T19:23:57Z",
+ "generator": "KitForge release/recipe_publish.py",
+ "dockerfile": "Dockerfile.offline.pinned",
+ "build_script": "BUILD_OFFLINE.sh",
+ "preview_lines": 24,
+ "pins": {
+  "upstream": {
+   "repo": "https://github.com/k8snetworkplumbingwg/multus-cni",
+   "ref": "v4.3.2",
+   "commit": "1d81062afcb32eb7290fa28bcbc482c3d0c5cae9",
+   "url": "https://github.com/k8snetworkplumbingwg/multus-cni/tree/1d81062afcb32eb7290fa28bcbc482c3d0c5cae9",
+   "from": "docs/provenance/BUILD_RECIPE.json"
+  },
+  "fetches": [
+   {
+    "kind": "git",
+    "url": "https://github.com/k8snetworkplumbingwg/multus-cni",
+    "ref": "v4.3.2"
+   },
+   {
+    "kind": "http",
+    "url": "https://github.com/canonical/chisel/releases/download/v1.5.1/chisel_v1.5.1_linux_amd64.tar.gz"
+   },
+   {
+    "kind": "http",
+    "url": "https://github.com/canonical/chisel-releases/archive/f2600d3aa90123db6d44bb1441a99afc8b5847d9.tar.gz"
+   }
+  ],
+  "bases": [
+   {
+    "ref": "golang:1.26.11-bookworm@sha256:dc40a13b61304647ed7e5d581d246b86413dfc29d63c6d018310feb93cd98fc0",
+    "image": "golang:1.26.11-bookworm",
+    "digest": "sha256:dc40a13b61304647ed7e5d581d246b86413dfc29d63c6d018310feb93cd98fc0"
+   },
+   {
+    "ref": "ubuntu:24.04@sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289",
+    "image": "ubuntu:24.04",
+    "digest": "sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289"
+   }
+  ],
+  "toolchain": {
+   "buildkit": "moby/buildkit:v0.31.2",
+   "buildkit_image_digest": "sha256:e0e67ea9c4bb07bdef683e29f70f3b623d1eb9c82274a9ec04e6bb0511449fb0",
+   "builder_images": [
+    "golang:1.26.11-bookworm@sha256:dc40a13b61304647ed7e5d581d246b86413dfc29d63c6d018310feb93cd98fc0"
+   ]
+  },
+  "build_method": "source-rebuild-go",
+  "source_date_epoch": 1795161129,
+  "source_date_epoch_utc": "2026-11-20T07:52:09Z",
+  "target": {
+   "image_manifest_digest": "sha256:c756394f10bf375ad51f83eda98d3f6a88b5cafebd5c81eaff86fa2d44cb746e",
+   "config_digest": "sha256:1242505ac92bb9c2283a00105f51038badbed71f92185ea4b088a742a21412de",
+   "image": "readystack/multuscni:v4.3.2-CE-ubuntu24.04-r3"
+  },
+  "checksummed_files": 5739
+ },
+ "files": [
+  {
+   "path": "BASES.tsv",
+   "size": 264,
+   "sha256": "4b98a700d33a9f62c6299744be2f31889777ec9f3b1cf9150d02a25daa1a297d",
+   "lines": 2,
+   "public": "full"
+  },
+  {
+   "path": "BUILD_OFFLINE.sh",
+   "size": 8856,
+   "sha256": "6ab4f08a6ec775b32d854f03413b30ecfe555ddba78cf0de956235f5a2a39542",
+   "lines": 162,
+   "public": "preview",
+   "preview_lines": 24
+  },
+  {
+   "path": "CHECKSUMS.sha256",
+   "size": 871264,
+   "sha256": "462c818fce23639dbb810f20565cdd80c3493de7b5d6614db02bf23a6bd82018",
+   "lines": 5739,
+   "public": "account",
+   "stored": "gzip"
+  },
+  {
+   "path": "DOCKERFILE_NAME.txt",
+   "size": 26,
+   "sha256": "9aadd1ede68e016a6f163c97befc5ff2fcdc8ebd4f84b108dba63cb195fa8c84",
+   "lines": 1,
+   "public": "full"
+  },
+  {
+   "path": "Dockerfile",
+   "size": 13962,
+   "sha256": "d2cd5391320c1a791170023d749ff0ebbe5cddaaa0696538b83d44459dcf8c1c",
+   "lines": 108,
+   "public": "account"
+  },
+  {
+   "path": "Dockerfile.offline",
+   "size": 13962,
+   "sha256": "d2cd5391320c1a791170023d749ff0ebbe5cddaaa0696538b83d44459dcf8c1c",
+   "lines": 108,
+   "public": "account"
+  },
+  {
+   "path": "Dockerfile.offline.pinned",
+   "size": 13962,
+   "sha256": "d2cd5391320c1a791170023d749ff0ebbe5cddaaa0696538b83d44459dcf8c1c",
+   "lines": 108,
+   "public": "preview",
+   "preview_lines": 24
+  },
+  {
+   "path": "Dockerfile.vendor",
+   "size": 5931,
+   "sha256": "a4e69984248cf216694aa220349e1dc2710646bf714d868e3109bc20e9949db5",
+   "lines": 47,
+   "public": "account"
+  },
+  {
+   "path": "FILE_MODES.tsv",
+   "size": 584712,
+   "sha256": "ba7f49d210d43900f7b6301bb05373a9696e0b7d538862d84b934cd0baa9bea7",
+   "lines": 6872,
+   "public": "account",
+   "stored": "gzip"
+  },
+  {
+   "path": "MANIFEST.txt",
+   "size": 481042,
+   "sha256": "dfd13c64846e92ef7bd0a3fae012a952ef136a5fab14eb1aa8468c77341ce12a",
+   "lines": 5741,
+   "public": "account",
+   "stored": "gzip"
+  },
+  {
+   "path": "README.md",
+   "size": 3304,
+   "sha256": "cb70b86cf3b923dfc4847689a0ccbf4d0bc2db9dd2bceeba7d440b3f15165a1e",
+   "lines": 39,
+   "public": "account"
+  },
+  {
+   "path": "SOURCE_DATE_EPOCH.txt",
+   "size": 11,
+   "sha256": "10c87ded91692bfbd8d8feebfaab3fb3c5383988e2fa39629ec5c3157658b074",
+   "lines": 1,
+   "public": "full"
+  },
+  {
+   "path": "TARGET_DIGEST.txt",
+   "size": 477,
+   "sha256": "e3c36017afc3dcf8f72bda6518cfe9d21187467499f0748524b17ca565541d72",
+   "lines": 11,
+   "public": "full"
+  },
+  {
+   "path": "VERIFY_OFFLINE.sh",
+   "size": 10153,
+   "sha256": "3e8184ea230cfd8f41f977e26be6bf7bd03112c396c517837ce0c7de4f7399dd",
+   "lines": 165,
+   "public": "account"
+  },
+  {
+   "path": "docs/PROVENANCE.md",
+   "size": 2645,
+   "sha256": "4d0b1c9749c65f96998be46acb40e655c1ad18ee42a84ee29fd37ac62cc2c882",
+   "lines": 36,
+   "public": "account"
+  },
+  {
+   "path": "docs/REBUILD.md",
+   "size": 6407,
+   "sha256": "db3ee1f56bff75c8f944fa54de65cd4a67b674e5a7e967f5650c8d2581cb8b1b",
+   "lines": 62,
+   "public": "account"
+  },
+  {
+   "path": "docs/VERIFY.md",
+   "size": 2041,
+   "sha256": "74fa16e8d68b5023bb58248798501d675863cee0337e3dfdb07e80b0b9ccd76b",
+   "lines": 34,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/BASE_IMAGE_DIGESTS.lock",
+   "size": 75,
+   "sha256": "fa8857a075823779fba771e4169c31f46a3571ceac2991e6d1cb6edca9eea6be",
+   "lines": 2,
+   "public": "full"
+  },
+  {
+   "path": "docs/provenance/BUILD_RECIPE.json",
+   "size": 8609,
+   "sha256": "9ab5992793f5607ec163f87e70aea32a8307b3972662c51ad238ae129d8ca478",
+   "lines": 148,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/CUSTODY_INPUTS.json",
+   "size": 665,
+   "sha256": "9259956ff2ab6855b9411ff9d130ed44b79402f12a756eeb647b257b3f5562f7",
+   "lines": 17,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/SOURCE_FILE_MANIFEST.json",
+   "size": 5642,
+   "sha256": "57cf842d4ae270ade804e3125bc837e95bbd81dd84ccac1ea6c93912526ab7a5",
+   "lines": 166,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/SOURCE_TREE_HASH.json",
+   "size": 322,
+   "sha256": "df6f287725cafd0063f3ccad0bb22e15d7b7026053cd4cd25932a86f89e73ee4",
+   "lines": 9,
+   "public": "full"
+  },
+  {
+   "path": "docs/provenance/SYSTEM_PINNING.lock",
+   "size": 346,
+   "sha256": "647374b10b9c4876e489015568ec8f51da5312d8e221f6019a62aeeb0acdc7e5",
+   "lines": 10,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/TOOLCHAIN.lock",
+   "size": 8933,
+   "sha256": "a378dd141882cdcee975fa296b15bb42781373fe055b107a5ce805ddfc59aaaa",
+   "lines": 169,
+   "public": "account"
+  },
+  {
+   "path": "rebuild.json",
+   "size": 1529,
+   "sha256": "533685c59742f06211eec91f34a66831853f974bd4c4e4b5c2fb6e844f927212",
+   "lines": 42,
+   "public": "account"
+  },
+  {
+   "path": "rs-probe.go",
+   "size": 3179,
+   "sha256": "a8bdee17a3581f8685f58d7a8ccb7524153829f70b19c9d75e323c589de2ad8f",
+   "lines": 117,
+   "public": "account"
+  },
+  {
+   "path": "rs-probe.mod",
+   "size": 40,
+   "sha256": "a480b79acf98e4275725058076ad2a8684a2eee06c27f4337b75339c198ca92d",
+   "lines": 3,
+   "public": "account"
+  },
+  {
+   "path": "toolchain/BUILDKIT_TAG.txt",
+   "size": 22,
+   "sha256": "fcd530eeb02b063d2f047adad6eef896422a8e8d558513e5f09b2a262be32573",
+   "lines": 1,
+   "public": "full"
+  }
+ ],
+ "skipped": [],
+ "kit_adds": {
+  "bases": {
+   "files": 16,
+   "bytes": 326685578
+  },
+  "docs": {
+   "files": 218,
+   "bytes": 3321960
+  },
+  "toolchain": {
+   "files": 1,
+   "bytes": 111529472
+  },
+  "vendored": {
+   "files": 5478,
+   "bytes": 80840668
+  }
+ },
+ "redacted_files": 0
+}
